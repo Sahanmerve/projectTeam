@@ -21,5 +21,7 @@ namespace TeamProject.Models
         [Required]
         [MaxLength(150)]
         public string EPosta { get; set; }
+        [MaxLength(1000)]
+        public string ImageURL { get; set; }
     }
 }
