@@ -15,6 +15,10 @@ namespace TeamProject.Models
         [Required]
         [MaxLength(100)]
         public string UserName { get; set;}
+        [MaxLength(100)]
+        public string Name { get; set; }
+        [MaxLength(100)]
+        public string Surname { get; set; }
         [Required]
         [MaxLength(16)]
         public string Password { get; set; }
