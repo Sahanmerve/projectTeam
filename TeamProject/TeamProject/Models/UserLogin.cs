@@ -11,7 +11,7 @@ namespace TeamProject.Models
     public class UserLogin
     {
         [Key]
-        public int UserId { get; set; }
+        public int UserID { get; set; }
         [Required]
         [MaxLength(100)]
         public string UserName { get; set;}

@@ -17,7 +17,7 @@ namespace TeamProject.Models
         public DateTime SendDate { get; set; }
 
         [ForeignKey("UserLogin")]
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         public virtual UserLogin UserLogin { get; set; }
 
     }
