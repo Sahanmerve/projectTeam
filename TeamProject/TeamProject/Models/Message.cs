@@ -19,6 +19,25 @@ namespace TeamProject.Models
         [ForeignKey("UserLogin")]
         public int UserID { get; set; }
         public virtual UserLogin UserLogin { get; set; }
-
+        [NotMapped]
+        public string WriteTime
+        {
+            get
+            {
+                TimeSpan Sure = DateTime.Now - SendDate;
+                if (Sure.TotalDays < 1)
+                {
+                    return Sure.Hours + " hours " + Sure.Minutes + " minutes ago";
+                }
+                else
+                {
+                    return Sure.Days + " day ago.";
+                }
+            }
+        }
+        public Message()
+        {
+            SendDate = DateTime.Now;
+        }
     }
 }
