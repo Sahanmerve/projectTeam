@@ -30,5 +30,6 @@ namespace TeamProject.Models
         public DateTime Birthday { get; set; }
         [Column(TypeName ="text")]
         public string Bio { get; set; }
+        
     }
 }
