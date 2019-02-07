@@ -451,10 +451,10 @@
             password = $("#password").val();
          
             $.ajax({
-                url: "/Panel/Login/LoginControl?username= " + username  +"&password=" + password,
+                url: "/Panel/Login/LoginControl?name=" + username  +"&password=" + password,
                 method: "POST",
                 success: function (html) {
-                    if (html == 'true') {
+                    if (html) {
                         window.location = "/Home/";
                     } else {
                         alert("olmadı");

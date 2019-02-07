@@ -9,9 +9,10 @@ namespace TeamProject.Areas.Panel.Controllers
     public class LoginController : Controller
     {
         // GET: Panel/Login
+        [HttpGet]
         public ActionResult Index()
         {
-         
+            
             return View();
 
         }
