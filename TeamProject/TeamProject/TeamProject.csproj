@@ -142,6 +142,7 @@
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MessagesViewModel.cs" />
     <Compile Include="Models\TeamProjectContext.cs" />
+    <Compile Include="Models\UserDetail.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
