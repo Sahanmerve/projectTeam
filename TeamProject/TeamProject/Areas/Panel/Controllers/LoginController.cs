@@ -21,10 +21,14 @@ namespace TeamProject.Areas.Panel.Controllers
         public JsonResult LoginControl(string name, string password)
         {
             TeamProjectContext db = new TeamProjectContext();
-            var a = db.UserLogins.Find();
-            if (name == "admin" && password == "123")
+            var sorgu = from U in db.UserLogins where U.UserName == name & U.Password== password select U;
+            var User1 = sorgu.FirstOrDefault();
+            
+
+            if (User != null)
             {
-                return Json(true);
+                Session["id"] = User1.UserID;
+                return Json(User1.UserID);
              
             }
             return Json(false);

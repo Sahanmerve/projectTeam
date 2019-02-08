@@ -11,10 +11,12 @@ namespace TeamProject.Controllers
     {
         // GET: Home
         public ActionResult Index()
-        {
+        {             
             TeamProjectContext db = new TeamProjectContext();
-            
-            return View(db.UserLogins.FirstOrDefault());
+            int Id = (int)Session["id"];
+            var a= db.UserDetails.FirstOrDefault(x=> x.UserDetailID == Id);
+
+            return View(a);
         }
         public ActionResult _Conversation(string model)
         {
@@ -23,9 +25,6 @@ namespace TeamProject.Controllers
             data.Messages = db.Messages.ToList();
             return View(data);
         }
-        public ActionResult Home()
-        {
-            return View();
-        }
+      
     }
 }

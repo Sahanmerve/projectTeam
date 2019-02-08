@@ -454,10 +454,11 @@
                 url: "/Panel/Login/LoginControl?name=" + username  +"&password=" + password,
                 method: "POST",
                 success: function (html) {
-                    if (html) {
-                        window.location = "/Home/";
-                    } else {
+                    if (!html) {
                         alert("olmadı");
+                        
+                    } else {
+                        window.location = "/Home/Index";
                     }
                 }
 

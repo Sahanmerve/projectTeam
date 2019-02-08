@@ -15,7 +15,7 @@ namespace TeamProject.Models
         public string NameSurname { get; set; }
         [MaxLength(1000)]
         public string ImageURL { get; set; }
-        public DateTime? Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         [Column(TypeName = "text")]
         public string Bio { get; set; }
         public virtual UserLogin User { get; set; }

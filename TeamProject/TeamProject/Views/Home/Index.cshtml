@@ -1,9 +1,10 @@
 ﻿@using TeamProject.Models
-@model UserLogin
+@model UserDetail
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @if (Model.ImageURL != null)
 {
     <div class="panel panel-default">
@@ -24,7 +25,7 @@
                     <p>Unknown</p>
                     <hr>
                     <h3><strong>Birthday</strong></h3>
-                    <p>@Model.Birthday.ToShortDateString() aaaaa</p>
+                    <p>@Model.Birthday.ToShortDateString()</p>
                 </div>
             </div>
         </div>
@@ -33,7 +34,8 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <span>
-                    <h1 class="panel-title pull-left" style="font-size:30px;">@Model.UserName <small>@Model.EPosta</small> <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
+                    <h1 class="panel-title pull-left" style="font-size:30px;">@Model.NameSurname 
+                    <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
                     <div class="dropdown pull-right">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Friends
@@ -96,7 +98,8 @@ else
         <div class="panel panel-default">
             <div class="panel-body">
                 <span>
-                    <h1 class="panel-title pull-left" style="font-size:30px;">@Model.UserName<small>@Model.EPosta</small> <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
+                    <h1 class="panel-title pull-left" style="font-size:30px;">@Model.NameSurname
+                    <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
                     <div class="dropdown pull-right">
                         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Friends
