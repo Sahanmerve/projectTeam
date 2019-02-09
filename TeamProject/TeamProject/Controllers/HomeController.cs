@@ -9,20 +9,21 @@ namespace TeamProject.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        TeamProjectContext db = new TeamProjectContext();
+        int Id;
         public ActionResult Index()
-        {             
-            TeamProjectContext db = new TeamProjectContext();
-            int Id = (int)Session["id"];
+        {
+            Id = (int)Session["id"];
             var a= db.UserDetails.FirstOrDefault(x=> x.UserDetailID == Id);
-
             return View(a);
         }
+
         public ActionResult _Conversation(string model)
         {
-            TeamProjectContext db = new TeamProjectContext();
+            Id = (int)Session["id"];
+            //var a = db.Messages.FirstOrDefault(x => x.UserID == Id);
             MessagesViewModel data = new MessagesViewModel();
-            data.Messages = db.Messages.ToList();
+            data.Messages = db.Messages.Where(x => x.UserID == Id).ToList();
             return View(data);
         }
       
