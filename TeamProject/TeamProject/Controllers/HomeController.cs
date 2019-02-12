@@ -27,5 +27,9 @@ namespace TeamProject.Controllers
             //data.Messages = db.Messages.Where(x => x.UserID == Id).ToList();
             return View(a);
         }
+        public ActionResult _Send()
+        {
+            return View();
+        }
     }
 }
