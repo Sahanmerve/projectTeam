@@ -22,10 +22,10 @@ namespace TeamProject.Controllers
         public ActionResult _Conversation(string model)
         {
             Id = (int)Session["id"];
-            var a = db.Messages.FirstOrDefault(x => x.UserID == Id);
-            MessagesViewModel data = new MessagesViewModel();
-            data.Messages = db.Messages.Where(x => x.UserID == Id).ToList();
-            return View(data);
+            var a = db.Messages.Where(x => x.UserID == Id).ToList();
+            //MessagesViewModel data = new MessagesViewModel();
+            //data.Messages = db.Messages.Where(x => x.UserID == Id).ToList();
+            return View(a);
         }
     }
 }

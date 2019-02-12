@@ -1,9 +1,10 @@
 ﻿@using TeamProject.Models
-@model Message
+@model List<Message>
 @{
     Layout = null;
 }
-
+@foreach (var item in Model)
+{
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="pull-left">
@@ -11,7 +12,7 @@
                     <img class="media-object img-circle" src="#" width="50" height="50" style="margin-right:8px; margin-top:-5px;">
                 </a>
             </div>
-            <h4><a href="#" style="text-decoration:none;"><strong>@Model.UserLogin.UserName</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i>@Model.WriteTime</i></a></small></small></h4>
+            <h4><a href="#" style="text-decoration:none;"><strong>@item.UserLogin.UserName</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i>@item.WriteTime</i></a></small></small></h4>
             <span>
                 <div class="navbar-right">
                     <div class="dropdown">
@@ -32,7 +33,7 @@
             </span>
             <hr>
             <div class="post-content">
-                <p>@Model.SendMessage</p>
+                <p>@item.SendMessage</p>
 
             </div>
             <hr>
@@ -60,6 +61,8 @@
             </div>
         </div>
     </div>
+}
+
 
 
 
