@@ -24,15 +24,16 @@ namespace TeamProject.Controllers
             var a = db.Messages.Where(x => x.UserID == Id).ToList();
             return View(a);
         }
+
         [HttpGet]
         public ActionResult _Send()
         {
-
             Id = (int)Session["id"];
             var b = db.UserDetails.Where(x => x.UserDetailID == Id).ToList();
             return View(b);
 
         }
+
         [HttpPost]
         public ActionResult _Send(Message Message1)
         {

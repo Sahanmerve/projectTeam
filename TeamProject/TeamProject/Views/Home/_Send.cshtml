@@ -1,9 +1,11 @@
 ﻿@using TeamProject.Models
 @model List<UserDetail>
-
+@{ 
+    Layout = null;
+}
 @foreach (var item in Model)
 {
-    <form class="form-control">
+   
         <div class="panel panel-default">
             <div class="panel-body">
                 <h1 class="panel-title pull-left" style="font-size:30px;">
@@ -40,6 +42,5 @@
                 </span>
             </div>
         </div>
-    </form>
 
 }
